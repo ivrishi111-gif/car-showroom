@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELITE MOTORS | Car Showroom</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Cinzel/Montserrat for luxury automotive branding -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#111111',
+                        gold: {
+                            400: '#e5c158',
+                            500: '#d4af37',
+                            600: '#b18a17',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-neutral-100 text-neutral-900 antialiased selection:bg-gold-500 selection:text-obsidian">
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-40 bg-obsidian/95 backdrop-blur-md text-white shadow-lg border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#home" class="font-display text-2xl sm:text-3xl font-extrabold tracking-widest uppercase">
+                ELITE <span class="text-gold-500">MOTORS.</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-medium">
+                <a href="#home" class="hover:text-gold-500 transition">Home</a>
+                <a href="#cars" class="hover:text-gold-500 transition">Cars</a>
+                <a href="#features" class="hover:text-gold-500 transition">Features</a>
+                <a href="#compare" class="hover:text-gold-500 transition">Compare</a>
+                <a href="#contact" class="hover:text-gold-500 transition">Contact</a>
+                <a href="#testdrive" class="bg-gold-500 hover:bg-white text-obsidian font-bold px-5 py-2.5 rounded-lg transition">
+                    Book Test Drive
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-t border-neutral-800 px-4 py-3 space-y-1">
+            <a href="#home" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Home</a>
+            <a href="#cars" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Cars</a>
+            <a href="#features" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Features</a>
+            <a href="#compare" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Compare</a>
+            <a href="#testdrive" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Test Drive</a>
+            <a href="#contact" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="home" class="relative min-h-[540px] lg:min-h-[620px] flex items-center justify-center text-center text-white px-4 py-20 bg-obsidian overflow-hidden">
+        <img 
+            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400" 
+            onerror="this.onerror=null; this.src='https://placehold.co/1400x700/111111/d4af37?text=ELITE+MOTORS+SHOWROOM';"
+            alt="Luxury sports car in dark showroom" 
+            class="absolute inset-0 w-full h-full object-cover opacity-50"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/45 to-obsidian/30"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <span class="inline-block uppercase tracking-widest text-xs font-bold bg-gold-500 text-obsidian px-4 py-1.5 rounded-full mb-5 shadow">
+                2026 Luxury & Performance Lineup
+            </span>
+            <h1 class="font-display text-4xl sm:text-6xl font-extrabold mb-5 tracking-tight drop-shadow">
+                DRIVE YOUR DREAM
+            </h1>
+            <p class="text-lg sm:text-xl text-neutral-200 mb-8 max-w-xl mx-auto leading-relaxed">
+                Discover uncompromising luxury, exhilarating performance, and cutting-edge innovation in every drive.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#cars" class="bg-gold-500 hover:bg-white text-obsidian font-bold px-8 py-4 rounded-xl transition transform hover:-translate-y-0.5 shadow-lg">
+                    EXPLORE CARS
+                </a>
+                <a href="#compare" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-4 rounded-xl transition">
+                    COMPARE MODELS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Car Models -->
+    <section id="cars" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+            <div>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-obsidian mb-2">Our Latest Car Models</h2>
+                <p class="text-neutral-500">Find the perfect automobile engineered for your lifestyle.</p>
+            </div>
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap gap-2" id="car-filters">
+                <button data-category="All" class="car-filter-btn bg-obsidian text-gold-500 px-4 py-2 rounded-full text-sm font-semibold transition">All</button>
+                <button data-category="Sports" class="car-filter-btn bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full text-sm font-semibold transition">Sports</button>
+                <button data-category="Luxury Sedan" class="car-filter-btn bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full text-sm font-semibold transition">Luxury Sedan</button>
+                <button data-category="Luxury SUV" class="car-filter-btn bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full text-sm font-semibold transition">Luxury SUV</button>
+            </div>
+        </div>
+
+        <div id="cars-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Car Card 1 -->
+            <div data-category="Sports" class="car-item bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl border border-neutral-200/80 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x360/111111/d4af37?text=Chevrolet+Camaro';"
+                         alt="Chevrolet Camaro" class="w-full h-56 object-cover">
+                    <span class="absolute top-3 right-3 bg-obsidian/85 backdrop-blur-xs text-gold-500 text-xs font-bold px-3 py-1 rounded-full">
+                        Sports Car
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-obsidian mb-1">Chevrolet Camaro</h3>
+                        <div class="text-gold-600 text-2xl font-extrabold mb-4">₹65.00 Lakh</div>
+                        <div class="grid grid-cols-2 gap-2.5 text-sm text-neutral-600 bg-neutral-50 p-3.5 rounded-xl border border-neutral-100">
+                            <div><span class="font-semibold text-neutral-900">Engine:</span> 6.2L V8</div>
+                            <div><span class="font-semibold text-neutral-900">Gearbox:</span> Automatic</div>
+                            <div><span class="font-semibold text-neutral-900">Fuel:</span> Petrol</div>
+                            <div><span class="font-semibold text-neutral-900">0–100 km/h:</span> 4.0s</div>
+                        </div>
+                    </div>
+                    <button onclick="bookCar('Chevrolet Camaro')" class="w-full mt-6 bg-gold-500 hover:bg-obsidian text-obsidian hover:text-gold-500 font-bold py-3.5 px-6 rounded-xl transition shadow-sm">
+                        Book Test Drive
+                    </button>
+                </div>
+            </div>
+
+            <!-- Car Card 2 -->
+            <div data-category="Luxury Sedan" class="car-item bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl border border-neutral-200/80 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x360/111111/d4af37?text=Mercedes-Benz+C-Class';"
+                         alt="Mercedes-Benz C-Class" class="w-full h-56 object-cover">
+                    <span class="absolute top-3 right-3 bg-obsidian/85 backdrop-blur-xs text-gold-500 text-xs font-bold px-3 py-1 rounded-full">
+                        Luxury Sedan
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-obsidian mb-1">Mercedes-Benz C-Class</h3>
+                        <div class="text-gold-600 text-2xl font-extrabold mb-4">₹61.00 Lakh</div>
+                        <div class="grid grid-cols-2 gap-2.5 text-sm text-neutral-600 bg-neutral-50 p-3.5 rounded-xl border border-neutral-100">
+                            <div><span class="font-semibold text-neutral-900">Engine:</span> 2.0L Turbo</div>
+                            <div><span class="font-semibold text-neutral-900">Gearbox:</span> Automatic</div>
+                            <div><span class="font-semibold text-neutral-900">Fuel:</span> Petrol</div>
+                            <div><span class="font-semibold text-neutral-900">0–100 km/h:</span> 6.0s</div>
+                        </div>
+                    </div>
+                    <button onclick="bookCar('Mercedes-Benz C-Class')" class="w-full mt-6 bg-gold-500 hover:bg-obsidian text-obsidian hover:text-gold-500 font-bold py-3.5 px-6 rounded-xl transition shadow-sm">
+                        Book Test Drive
+                    </button>
+                </div>
+            </div>
+
+            <!-- Car Card 3 -->
+            <div data-category="Luxury SUV" class="car-item bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl border border-neutral-200/80 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x360/111111/d4af37?text=Range+Rover+SUV';"
+                         alt="Range Rover SUV" class="w-full h-56 object-cover">
+                    <span class="absolute top-3 right-3 bg-obsidian/85 backdrop-blur-xs text-gold-500 text-xs font-bold px-3 py-1 rounded-full">
+                        Luxury SUV
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-obsidian mb-1">Range Rover SUV</h3>
+                        <div class="text-gold-600 text-2xl font-extrabold mb-4">₹1.50 Crore</div>
+                        <div class="grid grid-cols-2 gap-2.5 text-sm text-neutral-600 bg-neutral-50 p-3.5 rounded-xl border border-neutral-100">
+                            <div><span class="font-semibold text-neutral-900">Engine:</span> 3.0L Turbo</div>
+                            <div><span class="font-semibold text-neutral-900">Gearbox:</span> Automatic</div>
+                            <div><span class="font-semibold text-neutral-900">Fuel:</span> Diesel</div>
+                            <div><span class="font-semibold text-neutral-900">Drive:</span> All-Wheel</div>
+                        </div>
+                    </div>
+                    <button onclick="bookCar('Range Rover SUV')" class="w-full mt-6 bg-gold-500 hover:bg-obsidian text-obsidian hover:text-gold-500 font-bold py-3.5 px-6 rounded-xl transition shadow-sm">
+                        Book Test Drive
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Cars (Features) -->
+    <section id="features" class="bg-obsidian text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-500 mb-3">Why Choose Our Cars?</h2>
+                <p class="text-neutral-400">Experience the pinnacle of automotive engineering, craftsmanship, and safety.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-neutral-900/90 border border-neutral-800 hover:border-gold-500/60 p-7 rounded-2xl transition">
+                    <div class="text-3xl mb-3">⚡</div>
+                    <h3 class="font-display text-xl font-bold text-gold-500 mb-2">Performance</h3>
+                    <p class="text-neutral-300 text-sm leading-relaxed">Precision-tuned engines delivering exhilarating acceleration and effortless handling.</p>
+                </div>
+
+                <div class="bg-neutral-900/90 border border-neutral-800 hover:border-gold-500/60 p-7 rounded-2xl transition">
+                    <div class="text-3xl mb-3">🛡️</div>
+                    <h3 class="font-display text-xl font-bold text-gold-500 mb-2">Safety</h3>
+                    <p class="text-neutral-300 text-sm leading-relaxed">360-degree driver assistance and reinforced chassis for complete peace of mind.</p>
+                </div>
+
+                <div class="bg-neutral-900/90 border border-neutral-800 hover:border-gold-500/60 p-7 rounded-2xl transition">
+                    <div class="text-3xl mb-3">✨</div>
+                    <h3 class="font-display text-xl font-bold text-gold-500 mb-2">Luxury</h3>
+                    <p class="text-neutral-300 text-sm leading-relaxed">Handcrafted leather cabins, ambient lighting, and timeless aerodynamic silhouettes.</p>
+                </div>
+
+                <div class="bg-neutral-900/90 border border-neutral-800 hover:border-gold-500/60 p-7 rounded-2xl transition">
+                    <div class="text-3xl mb-3">📱</div>
+                    <h3 class="font-display text-xl font-bold text-gold-500 mb-2">Technology</h3>
+                    <p class="text-neutral-300 text-sm leading-relaxed">Next-generation cockpit displays, AI voice control, and immersive surround audio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Comparison Table -->
+    <section id="compare" class="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-obsidian mb-2">Compare Our Cars</h2>
+                <p class="text-neutral-500">Side-by-side specifications to help you choose your ideal machine.</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl shadow-md border border-neutral-200">
+                <table class="w-full min-w-[600px] border-collapse text-center">
+                    <thead>
+                        <tr class="bg-obsidian text-gold-500 font-display text-sm uppercase tracking-wider">
+                            <th class="p-4 text-left pl-6">Specifications</th>
+                            <th class="p-4">Chevrolet Camaro</th>
+                            <th class="p-4">Mercedes-Benz C-Class</th>
+                            <th class="p-4">Range Rover SUV</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-neutral-200 text-sm sm:text-base">
+                        <tr class="bg-white hover:bg-neutral-50">
+                            <td class="p-4 text-left pl-6 font-bold text-neutral-800">Ex-Showroom Price</td>
+                            <td class="p-4 font-semibold text-gold-600">₹65.00 Lakh</td>
+                            <td class="p-4 font-semibold text-gold-600">₹61.00 Lakh</td>
+                            <td class="p-4 font-semibold text-gold-600">₹1.50 Crore</td>
+                        </tr>
+                        <tr class="bg-neutral-50 hover:bg-neutral-100/70">
+                            <td class="p-4 text-left pl-6 font-bold text-neutral-800">Engine</td>
+                            <td class="p-4">6.2L V8</td>
+                            <td class="p-4">2.0L Turbo</td>
+                            <td class="p-4">3.0L Turbo</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-neutral-50">
+                            <td class="p-4 text-left pl-6 font-bold text-neutral-800">Fuel Type</td>
+                            <td class="p-4">Petrol</td>
+                            <td class="p-4">Petrol</td>
+                            <td class="p-4">Diesel</td>
+                        </tr>
+                        <tr class="bg-neutral-50 hover:bg-neutral-100/70">
+                            <td class="p-4 text-left pl-6 font-bold text-neutral-800">Transmission</td>
+                            <td class="p-4">Automatic</td>
+                            <td class="p-4">Automatic</td>
+                            <td class="p-4">Automatic</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-neutral-50">
+                            <td class="p-4 text-left pl-6 font-bold text-neutral-800">Category</td>
+                            <td class="p-4">Sports</td>
+                            <td class="p-4">Luxury Sedan</td>
+                            <td class="p-4">Luxury SUV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Drive Booking Form -->
+    <section id="testdrive" class="bg-neutral-200/70 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-obsidian mb-2">Book Your Test Drive 🚘</h2>
+                <p class="text-neutral-600">Experience your dream car on the open road before making it yours.</p>
+            </div>
+
+            <form id="testdrive-form" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-neutral-100 space-y-4">
+                <div>
+                    <label for="full-name" class="block text-sm font-semibold text-neutral-700 mb-1">Full Name</label>
+                    <input type="text" id="full-name" placeholder="e.g., Vikramaditya Reddy" required
+                        class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-neutral-700 mb-1">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required
+                            class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition">
+                    </div>
+                    <div>
+                        <label for="mobile" class="block text-sm font-semibold text-neutral-700 mb-1">Mobile Number</label>
+                        <input type="tel" id="mobile" placeholder="+91 98765 43210" required
+                            class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="carSelect" class="block text-sm font-semibold text-neutral-700 mb-1">Select Your Car</label>
+                    <select id="carSelect" required
+                        class="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition">
+                        <option value="">Choose a vehicle...</option>
+                        <option value="Chevrolet Camaro">Chevrolet Camaro (₹65.00 Lakh)</option>
+                        <option value="Mercedes-Benz C-Class">Mercedes-Benz C-Class (₹61.00 Lakh)</option>
+                        <option value="Range Rover SUV">Range Rover SUV (₹1.50 Crore)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="date" class="block text-sm font-semibold text-neutral-700 mb-1">Preferred Date</label>
+                        <input type="date" id="date" required
+                            class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition">
+                    </div>
+                    <div>
+                        <label for="time-slot" class="block text-sm font-semibold text-neutral-700 mb-1">Preferred Time</label>
+                        <select id="time-slot" required
+                            class="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition">
+                            <option value="">Select time slot...</option>
+                            <option value="10 AM - 12 PM">10 AM – 12 PM</option>
+                            <option value="12 PM - 2 PM">12 PM – 2 PM</option>
+                            <option value="2 PM - 4 PM">2 PM – 4 PM</option>
+                            <option value="4 PM - 6 PM">4 PM – 6 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-neutral-700 mb-1">Additional Message (Optional)</label>
+                    <textarea id="message" rows="3" placeholder="Any specific variant, color preference, or questions..."
+                        class="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-gold-500 hover:bg-obsidian text-obsidian hover:text-gold-500 font-bold py-4 px-6 rounded-xl transition shadow-md text-base tracking-wide">
+                    SUBMIT REQUEST
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Showroom -->
+    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-obsidian mb-2">Contact Our Showroom</h2>
+        <p class="text-neutral-500 mb-10">Our automotive specialists are ready to help you find your dream car.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200">
+                <div class="text-2xl mb-2">📍</div>
+                <h3 class="font-bold mb-1">Showroom Address</h3>
+                <p class="text-sm text-neutral-600">Automobile Street, Hyderabad, India</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200">
+                <div class="text-2xl mb-2">📞</div>
+                <h3 class="font-bold mb-1">Phone</h3>
+                <p class="text-sm text-neutral-600">+91 98765 43210</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200">
+                <div class="text-2xl mb-2">📧</div>
+                <h3 class="font-bold mb-1">Email</h3>
+                <p class="text-sm text-neutral-600">elitemotors@gmail.com</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200">
+                <div class="text-2xl mb-2">🕒</div>
+                <h3 class="font-bold mb-1">Working Hours</h3>
+                <p class="text-sm text-neutral-600">Mon – Sat: 9 AM – 7 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-obsidian text-white py-10 px-4 text-center border-t border-neutral-800">
+        <h3 class="font-display text-2xl font-extrabold tracking-widest mb-2">ELITE <span class="text-gold-500">MOTORS.</span></h3>
+        <p class="text-neutral-400 text-sm mb-2">Your Dream Car, Our Priority.</p>
+        <p class="text-neutral-500 text-xs">© 2026 Elite Motors. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Custom Confirmation Modal (Replaces alert()) -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-neutral-200">
+            <div class="w-16 h-16 bg-gold-500/20 text-gold-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                🚘
+            </div>
+            <h3 class="font-display text-2xl font-bold text-obsidian mb-2">Test Drive Confirmed!</h3>
+            <p id="modal-details" class="text-neutral-600 text-sm sm:text-base mb-6 leading-relaxed"></p>
+            <button id="close-modal-btn" class="w-full bg-obsidian hover:bg-gold-500 text-gold-500 hover:text-obsidian font-bold py-3.5 px-6 rounded-xl transition">
+                Done
+            </button>
+        </div>
+    </div>
+
+    <!-- Interactive Script -->
+    <script>
+        // Prevent selecting past dates for test drive
+        const dateField = document.getElementById("date");
+        const todayStr = new Date().toISOString().split("T")[0];
+        dateField.setAttribute("min", todayStr);
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+        mobileMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+        });
+
+        // Filter car models by category
+        const filterBtns = document.querySelectorAll(".car-filter-btn");
+        const carItems = document.querySelectorAll(".car-item");
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const selectedCat = btn.dataset.category;
+                filterBtns.forEach(b => {
+                    b.className = b === btn
+                        ? "car-filter-btn bg-obsidian text-gold-500 px-4 py-2 rounded-full text-sm font-semibold transition"
+                        : "car-filter-btn bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full text-sm font-semibold transition";
+                });
+
+                carItems.forEach(card => {
+                    if (selectedCat === "All" || card.dataset.category === selectedCat) {
+                        card.classList.remove("hidden");
+                        card.classList.add("flex");
+                    } else {
+                        card.classList.add("hidden");
+                        card.classList.remove("flex");
+                    }
+                });
+            });
+        });
+
+        // Pre-select car and scroll smoothly to test drive section
+        function bookCar(carName) {
+            document.getElementById("carSelect").value = carName;
+            document.getElementById("testdrive").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        // Custom modal confirmation for test drive submission
+        const form = document.getElementById("testdrive-form");
+        const modal = document.getElementById("booking-modal");
+        const modalDetails = document.getElementById("modal-details");
+        const closeModalBtn = document.getElementById("close-modal-btn");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("full-name").value.trim();
+            const car = document.getElementById("carSelect").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time-slot").value;
+
+            modalDetails.innerHTML = `Thank you, <strong class="text-obsidian">${name}</strong>! Your private test drive for the <strong class="text-gold-600">${car}</strong> is scheduled on <strong class="text-obsidian">${date}</strong> between <strong class="text-obsidian">${time}</strong>.`;
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            form.reset();
+        });
+
+        closeModalBtn.addEventListener("click", () => {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        });
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            }
+        });
+    </script>
+</body>
+</html>
